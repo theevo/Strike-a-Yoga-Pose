@@ -57,9 +57,6 @@ class PoseController {
     static func fetchYogaGlyph( pose: Pose, completion: @escaping (UIImage) -> Void ) {
         let glyphURL = pose.imageURL
         
-        print("===Fetching Yoga Glyph===")
-        print(glyphURL)
-        
         URLSession.shared.dataTask(with: glyphURL) { (data, _, error) in
             
             if let error = error {
@@ -78,4 +75,4 @@ class PoseController {
         }.resume()
     } // end fetchYogaGlyph
     
-}
+} // end PoseController
