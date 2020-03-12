@@ -34,12 +34,15 @@ class PosesListTableViewController: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "poseCell", for: indexPath)
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "poseCell", for: indexPath) as? PoseTableViewCell else { return UITableViewCell() }
 
         let pose = PoseController.shared.allPoses[indexPath.row]
         
-        cell.textLabel?.text = pose.englishName
-        cell.detailTextLabel?.text = pose.sanskritName
+        cell.setPose(pose: pose)
+        
+        
+//        poseCell.textLabel?.text = pose.englishName
+//        poseCell.detailTextLabel?.text = pose.sanskritName
 
         return cell
     }

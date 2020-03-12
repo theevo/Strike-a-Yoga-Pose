@@ -15,29 +15,55 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="poseCell" textLabel="ET5-NF-TTe" detailTextLabel="KGG-Ni-4Cj" style="IBUITableViewCellStyleSubtitle" id="6Fc-qT-j72">
-                                <rect key="frame" x="0.0" y="28" width="414" height="55.5"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="poseCell" rowHeight="200" id="v79-PN-3S4" customClass="PoseTableViewCell" customModule="StrikeAYogaPose" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="200"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="6Fc-qT-j72" id="oCn-oI-oee">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="55.5"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="v79-PN-3S4" id="N8t-tn-bRr">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="(Boat)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ET5-NF-TTe">
-                                            <rect key="frame" x="20" y="10" width="47.5" height="20.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(Forward Bend with Shoulder Opener)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jsw-NF-E3l">
+                                            <rect key="frame" x="20" y="31" width="374" height="25.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="(Navasana)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="KGG-Ni-4Cj">
-                                            <rect key="frame" x="20" y="31.5" width="64" height="14.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
+                                        <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="154" translatesAutoresizingMaskIntoConstraints="NO" id="dwr-Tu-7e1">
+                                            <rect key="frame" x="20" y="76.5" width="374" height="103.5"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(Uttanasana)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FwO-Lc-mVn">
+                                                    <rect key="frame" x="0.0" y="0.0" width="124" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kLa-6Z-YRt">
+                                                    <rect key="frame" x="278" y="0.0" width="96" height="96"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="96" id="4Dy-sT-V91"/>
+                                                        <constraint firstAttribute="width" secondItem="kLa-6Z-YRt" secondAttribute="height" multiplier="1:1" id="fVh-Om-ebo"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                        </stackView>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="dwr-Tu-7e1" secondAttribute="trailing" constant="20" id="NZ7-a5-fYk"/>
+                                        <constraint firstItem="dwr-Tu-7e1" firstAttribute="top" secondItem="Jsw-NF-E3l" secondAttribute="bottom" constant="20" id="R6k-qD-EIi"/>
+                                        <constraint firstAttribute="bottom" secondItem="dwr-Tu-7e1" secondAttribute="bottom" constant="20" id="USd-nX-uVY"/>
+                                        <constraint firstItem="Jsw-NF-E3l" firstAttribute="leading" secondItem="N8t-tn-bRr" secondAttribute="leading" constant="20" id="dtG-Hd-b19"/>
+                                        <constraint firstItem="dwr-Tu-7e1" firstAttribute="leading" secondItem="N8t-tn-bRr" secondAttribute="leading" constant="20" id="m9u-33-qfy"/>
+                                        <constraint firstAttribute="trailing" secondItem="Jsw-NF-E3l" secondAttribute="trailing" constant="20" id="vtV-mp-VlV"/>
+                                        <constraint firstItem="Jsw-NF-E3l" firstAttribute="top" secondItem="N8t-tn-bRr" secondAttribute="top" constant="31" id="yC0-ya-Zgn"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <constraints>
+                                    <constraint firstItem="Jsw-NF-E3l" firstAttribute="top" secondItem="v79-PN-3S4" secondAttribute="top" constant="31" id="oPf-Lt-Ne7"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="poseNameLabel" destination="Jsw-NF-E3l" id="OVa-c1-jui"/>
+                                    <outlet property="sanskritNameLabel" destination="FwO-Lc-mVn" id="nre-mH-mgE"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -49,7 +75,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="njh-j3-B3a" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="548" y="153"/>
+            <point key="canvasLocation" x="547.82608695652175" y="152.67857142857142"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="fvR-Ce-Emc">

@@ -17,6 +17,7 @@
 		AC99426E2419A65400BC23DD /* PosesListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC99426D2419A65400BC23DD /* PosesListTableViewController.swift */; };
 		AC9942712419A82F00BC23DD /* PoseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9942702419A82F00BC23DD /* PoseError.swift */; };
 		AC9942732419ACA500BC23DD /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9942722419ACA500BC23DD /* UIViewControllerExtension.swift */; };
+		AC9942752419DC7A00BC23DD /* PoseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9942742419DC7A00BC23DD /* PoseTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		AC99426D2419A65400BC23DD /* PosesListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosesListTableViewController.swift; sourceTree = "<group>"; };
 		AC9942702419A82F00BC23DD /* PoseError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoseError.swift; sourceTree = "<group>"; };
 		AC9942722419ACA500BC23DD /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
+		AC9942742419DC7A00BC23DD /* PoseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoseTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +124,7 @@
 			isa = PBXGroup;
 			children = (
 				AC99426D2419A65400BC23DD /* PosesListTableViewController.swift */,
+				AC9942742419DC7A00BC23DD /* PoseTableViewCell.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -210,6 +213,7 @@
 				AC9942502419A25100BC23DD /* AppDelegate.swift in Sources */,
 				AC99426E2419A65400BC23DD /* PosesListTableViewController.swift in Sources */,
 				AC9942712419A82F00BC23DD /* PoseError.swift in Sources */,
+				AC9942752419DC7A00BC23DD /* PoseTableViewCell.swift in Sources */,
 				AC99426B2419A4E600BC23DD /* PoseController.swift in Sources */,
 				AC9942732419ACA500BC23DD /* UIViewControllerExtension.swift in Sources */,
 				AC9942522419A25100BC23DD /* SceneDelegate.swift in Sources */,
