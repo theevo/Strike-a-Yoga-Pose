@@ -25,8 +25,7 @@ class PoseController {
     func fetchPoses( completion: @escaping ( Result<[Pose],PoseError> ) -> Void ) {
         //        1. URL
         guard let finalURL = PoseController.baseURL else { return completion(.failure(.invalidURL)) }
-        print("=== Fetching Poses ===")
-        print(finalURL)
+        
         
         //        2. Data Task (talk to Internet)
         URLSession.shared.dataTask(with: finalURL) { (data, _, error) in
@@ -54,23 +53,27 @@ class PoseController {
         
     } // end fetchPoses
     
-    static func fetchYogaGlyph( pose: Pose, completion: @escaping (UIImage) -> Void ) {
+    static func fetchYogaGlyph( pose: Pose, completion: @escaping (Result<UIImage, PoseError>) -> Void ) {
         let glyphURL = pose.imageURL
         
-        URLSession.shared.dataTask(with: glyphURL) { (data, _, error) in
-            
+        var request = URLRequest(url: glyphURL)
+        request.httpMethod = "GET"
+        request.setValue("image/svg+xml", forHTTPHeaderField: "Content-Type")
+        
+        URLSession.shared.dataTask(with: request) { (data, _, error) in
+
             if let error = error {
                 print(error, error.localizedDescription)
-                return completion(UIImage())
+                return completion(.failure(.invalidURL))
             }
             
             guard let data = data else {
-                return completion(UIImage())
+                return completion(.failure(.noData))
             }
             
-            guard let glyph = UIImage(data: data) else { return completion(UIImage()) }
+            guard let glyph = UIImage(data: data) else { return completion(.failure(.badData)) }
             
-            return completion(glyph)
+            return completion(.success(glyph))
             
         }.resume()
     } // end fetchYogaGlyph

@@ -61,6 +61,7 @@
                                     <constraint firstItem="Jsw-NF-E3l" firstAttribute="top" secondItem="v79-PN-3S4" secondAttribute="top" constant="31" id="oPf-Lt-Ne7"/>
                                 </constraints>
                                 <connections>
+                                    <outlet property="poseGlyphImageView" destination="kLa-6Z-YRt" id="hDx-CB-jrP"/>
                                     <outlet property="poseNameLabel" destination="Jsw-NF-E3l" id="OVa-c1-jui"/>
                                     <outlet property="sanskritNameLabel" destination="FwO-Lc-mVn" id="nre-mH-mgE"/>
                                 </connections>

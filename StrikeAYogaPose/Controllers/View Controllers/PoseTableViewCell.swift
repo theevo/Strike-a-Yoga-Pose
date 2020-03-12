@@ -11,9 +11,10 @@ import UIKit
 class PoseTableViewCell: UITableViewCell {
     
     // MARK: - Outlets
-
+    
     @IBOutlet weak var poseNameLabel: UILabel!
     @IBOutlet weak var sanskritNameLabel: UILabel!
+    @IBOutlet weak var poseGlyphImageView: UIImageView!
     
     
     // MARK: - Properties
@@ -30,8 +31,28 @@ class PoseTableViewCell: UITableViewCell {
     
     func updateUI() {
         guard let pose = pose else { return }
-        poseNameLabel.text = pose.englishName
-        sanskritNameLabel.text = pose.sanskritName
+        
+        self.poseNameLabel.text = pose.englishName
+        self.sanskritNameLabel.text = pose.sanskritName
+        
+        PoseController.fetchYogaGlyph(pose: pose) { (result) in
+            
+            DispatchQueue.main.async {
+                
+                switch result {
+                    
+                case .success(let glyphImage):
+                    self.poseGlyphImageView.image = glyphImage
+                    
+                case .failure(let error):
+                    print(error, error.localizedDescription)
+                }
+                
+            }
+            
+        }
+        
+        
     }
-
+    
 }
