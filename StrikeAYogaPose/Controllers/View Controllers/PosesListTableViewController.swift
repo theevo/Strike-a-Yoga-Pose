@@ -12,10 +12,6 @@ class PosesListTableViewController: UITableViewController {
     
     // MARK: - Lifecycle Methods
     
-    override func viewWillAppear(_ animated: Bool) {
-        print("hello world")
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         fetchPoses()
