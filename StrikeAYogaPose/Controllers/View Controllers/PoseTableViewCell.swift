@@ -35,22 +35,9 @@ class PoseTableViewCell: UITableViewCell {
         self.poseNameLabel.text = pose.englishName
         self.sanskritNameLabel.text = pose.sanskritName
         
-        PoseController.fetchYogaGlyph(pose: pose) { (result) in
-            
-            DispatchQueue.main.async {
-                
-                switch result {
-                    
-                case .success(let glyphImage):
-                    self.poseGlyphImageView.image = glyphImage
-                    
-                case .failure(let error):
-                    print(error, error.localizedDescription)
-                }
-                
-            }
-            
-        }
+        let yogaGlyph = PoseController.fetchYogaGlyph(pose: pose)
+        
+        self.poseGlyphImageView.image = yogaGlyph
         
         
     }

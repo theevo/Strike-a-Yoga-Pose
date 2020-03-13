@@ -37,7 +37,7 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kLa-6Z-YRt">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pose_20" translatesAutoresizingMaskIntoConstraints="NO" id="kLa-6Z-YRt">
                                                     <rect key="frame" x="278" y="0.0" width="96" height="96"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="96" id="4Dy-sT-V91"/>
@@ -99,4 +99,7 @@
             <point key="canvasLocation" x="-371" y="153"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="pose_20" width="1280" height="1280"/>
+    </resources>
 </document>

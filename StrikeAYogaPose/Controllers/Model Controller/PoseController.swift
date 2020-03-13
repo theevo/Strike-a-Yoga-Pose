@@ -18,8 +18,9 @@ class PoseController {
     // MARK: - Private Properties
     
     private static let baseURL = URL(string: "https://raw.githubusercontent.com/rebeccaestes/yoga_api/master/yoga_api.json")
+    private static let imagePrefix = "pose_"
     
-    
+
     // MARK: - READ/GET functions
     
     func fetchPoses( completion: @escaping ( Result<[Pose],PoseError> ) -> Void ) {
@@ -53,29 +54,11 @@ class PoseController {
         
     } // end fetchPoses
     
-    static func fetchYogaGlyph( pose: Pose, completion: @escaping (Result<UIImage, PoseError>) -> Void ) {
-        let glyphURL = pose.imageURL
-        
-        var request = URLRequest(url: glyphURL)
-        request.httpMethod = "GET"
-        request.setValue("image/svg+xml", forHTTPHeaderField: "Content-Type")
-        
-        URLSession.shared.dataTask(with: request) { (data, _, error) in
-
-            if let error = error {
-                print(error, error.localizedDescription)
-                return completion(.failure(.invalidURL))
-            }
-            
-            guard let data = data else {
-                return completion(.failure(.noData))
-            }
-            
-            guard let glyph = UIImage(data: data) else { return completion(.failure(.badData)) }
-            
-            return completion(.success(glyph))
-            
-        }.resume()
+    static func fetchYogaGlyph( pose: Pose ) -> UIImage {
+        let poseId = String(pose.id)
+        let imageName = imagePrefix + poseId
+        guard let image = UIImage(named: imageName) else { return UIImage() }
+        return image
     } // end fetchYogaGlyph
     
 } // end PoseController
